@@ -1,6 +1,13 @@
 app.controller('mainCtrl', ['$scope', 'dataService', function($scope, dataService){
 
-	$scope.test = 'test this out';
+	$scope.heroes = [];
+
+	$scope.getDemHeroes = function() {
+		$scope.heroes = dataService.heroSender();
+		
+	};
+
+	$scope.getDemHeroes();
 
 }]);
 

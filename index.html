@@ -8,8 +8,16 @@
 </head>
 <body ng-controller="mainCtrl">
 
-{{test}}
+<h1 class="main-header">Meet The Avengers</h1>
 
+<div class="container">
+	<div class="heroCard" ng-repeat="hero in heroes">
+		<h3 class="heroName">{{ hero.name }}</h3>
+		<h4 class="description">Description</h4>
+		<p class="description-text">{{ hero.description }}</p>
+	</div>	
+
+</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="app.js"></script>
