@@ -2,26 +2,37 @@
 <html ng-app="avengers">
 <head>
   <title>Avengers</title>
-  
+
   <link rel="stylesheet" type="text/css" href="base.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   
 </head>
 <body ng-controller="mainCtrl">
 
-<h1 class="main-header">Meet The Avengers</h1>
+<section class="module parallax parallax-1">
+    <div class="container">
+        <h1>Meet The Avengers</h1>
+    </div>
+</section>
+
+<div class="group">
+    <input type="text" required ng-model="myFilter">
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Filter by...</label>
+</div>
 
 <div class="container">
-	<div class="heroCard" ng-repeat="hero in heroes">
+	<div class="heroCard" ng-repeat="hero in heroes | filter:myFilter">
             <h3 class="heroName">{{hero.name}}</h3>
 
             <div class="hero-image">
-                <img ng-src="{{hero.img}}" />
+                <img ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
             </div>
 
             <h4 class="description">Description</h4>
 
-            <p class="description-text">{{hero.description}}</p>
+            <p class="description-text">{{hero.description || "This hero needs no description!" }}</p>
 
         </div>
 
