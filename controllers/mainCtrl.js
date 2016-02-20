@@ -1,5 +1,7 @@
-var app = angular.module('AngularFriends');
-app.controller('FriendController', function($scope, $http){
+app.controller('mainCtrl', ['$scope', 'dataService', function($scope, dataService){
+
+	$scope.test = 'test this out';
+
+}]);
 
 
-});
